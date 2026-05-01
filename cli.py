@@ -1,11 +1,9 @@
 import sys
 import argparse
 
-sys.path.insert(0, __import__("os").path.join(__import__("os").path.dirname(__file__), "bot"))
-
-from client import APIError, NetworkError
-from orders import place_market_order, place_limit_order
-from logging_config import get_logger
+from bot.client import APIError, NetworkError
+from bot.orders import place_market_order, place_limit_order
+from bot.logging_config import get_logger
 
 
 log = get_logger()
