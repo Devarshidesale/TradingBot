@@ -1,10 +1,10 @@
-import logging
 from dataclasses import dataclass
 
 from client import send_order, APIError, NetworkError
+from logging_config import get_logger
 
 
-log = logging.getLogger(__name__)
+log = get_logger()
 
 
 # Clean result container

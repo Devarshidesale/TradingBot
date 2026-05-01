@@ -1,18 +1,14 @@
 import sys
-import logging
 import argparse
 
 sys.path.insert(0, __import__("os").path.join(__import__("os").path.dirname(__file__), "bot"))
 
 from client import APIError, NetworkError
 from orders import place_market_order, place_limit_order
+from logging_config import get_logger
 
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-)
-log = logging.getLogger("cli")
+log = get_logger()
 
 
 # Argument parser
