@@ -31,7 +31,7 @@ def place_market_order(symbol: str, side: str, quantity: float) -> OrderResult:
 
     try:
         resp = send_order(params)
-        print(resp)
+
     except APIError as exc:
         log.error("Market order failed — APIError %s: %s", exc.code, exc.msg)
         return OrderResult(success=False, error=str(exc))
@@ -62,7 +62,7 @@ def place_limit_order(symbol: str, side: str, quantity: float, price: float) -> 
 
     try:
         resp = send_order(params)
-        print(resp)
+
     except APIError as exc:
         log.error("Limit order failed — APIError %s: %s", exc.code, exc.msg)
         return OrderResult(success=False, error=str(exc))
@@ -79,4 +79,4 @@ def place_limit_order(symbol: str, side: str, quantity: float, price: float) -> 
     )
     return finalObject
 
-print(place_limit_order("BTCUSDT", "BUY", 0.01, 50000))
+
